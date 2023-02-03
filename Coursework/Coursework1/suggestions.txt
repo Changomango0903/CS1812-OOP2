@@ -1,0 +1,7 @@
+Do you like dogs?
+Do you prefer big dogs?
+a golden retriever
+a chihuahua
+Do you pefer mammals?
+a hamster
+an iguana
