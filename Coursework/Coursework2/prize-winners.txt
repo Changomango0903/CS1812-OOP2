@@ -1,0 +1,266 @@
+A. B. Guthrie, Jr
+A. S. Byatt
+Abdulrazak Gurnah
+Adam Johnson
+Alan Hollinghurst
+Albert Camus
+Aleksandr I. Solzhenitsyn
+Alice Munro
+Alice Walker
+Alison Lurie
+Allen Drury
+Anatole France
+André Gide
+Andrew Sean Greer
+Anita Brookner
+Anna Burns
+Anne Enright
+Anne Tyler
+Annie Ernaux
+Annie Proulx
+Anthony Doerr
+Aravind Adiga
+Arundhati Roy
+Barry Unsworth
+Ben Okri
+Bernard Malamud
+Bernice Rubens
+Bertrand Russell
+Bjornsterne Bjornson
+Bob Dylan
+Booth Tarkington
+Boris L. Pasternak
+Camilo José Cela
+Carl F. G. Spitteler
+Carol Shields
+Caroline Miller
+Chinua Achebe
+Claude Simon
+Colson Whitehead
+Conrad Richter
+Cormac McCarthy
+Czeslaw Milosz
+Damon Galgut
+Dario Fo
+David Diop
+David Grossman
+David Storey
+DBC Pierre
+Derek Walcott
+Donna Tartt
+Doris Lessing
+Douglas Stuart
+Edith Wharton
+Edna Ferber
+Edward P. Jones
+Edwin O’Connor
+Eleanor Catton
+Elfriede Jelinek
+Elias Canetti
+Elizabeth Strout
+Ellen Glasgow
+Erik A. Karlfeldt
+Ernest Hemingway
+Ernest Poole
+Eudora Welty
+Eugene O’Neill
+Eugenio Montale
+Eyvind Johnson
+Francisco Goldman
+Francois Mauriac
+Frans E. Sillanpää
+Frederic Mistral
+Gabriel Garcia Marquez
+Gabriela Mistral
+Gao Xingjian
+Geetanjali Shree
+George Bernard Shaw
+George Saunders
+Geraldine Brooks
+Gerhart Hauptmann
+Giorgos Seferis
+Giosue Carducci
+Graham Swift
+Grazia Deledda
+Günter Grass
+Halldor K. Laxness
+Han Kang
+Harold L. Davis
+Harold Pinter
+Harper Lee
+Harry Edmund Martinson
+Heinrich Böll
+Henri Bergson
+Henrik Pontoppidan
+Henryk Sienkiewicz
+Herman Wouk
+Hermann Hesse
+Herta Müller
+Hilary Mantel
+Howard Jacobson
+Ian McEwan
+Imre Kertész
+Iris Murdoch
+Isaac Bashevis Singer
+Ismail Kadare
+Ivan A. Bunin
+Ivo Andric
+J. G. Farrell
+J. M. Coetzee
+Jacinto Benavente
+James A. Michener
+James Agee
+James Alan McPherson
+James Gould Cozzens
+James Kelman
+Jane Smiley
+Jaroslav Siefert
+Jean Paul Sartre
+Jean Stafford
+Jean-Marie Gustave Le Clézio
+Jeffrey Eugenides
+Jennifer Egan
+Jhumpa Lahiri
+Johannes V. Jensen
+John Banville
+John Berger
+John Cheever
+John Galsworthy
+John Hersey
+John Kennedy Toole
+John M. Coetzee
+John Phillips Marquand
+John Steinbeck
+John Updike
+Jokha al-Harthi
+Jose Echegaray
+José Saramago
+Joseph Brodsky
+Josephine Winslow Johnson
+Juan Ramón Jiménez
+Julia Peterkin
+Julian Barnes
+Junot Diaz
+Karl A. Gjellerup
+Katherine Anne Porter
+Kazuo Ishiguro
+Kenzaburo Oe
+Keri Hulme
+Kingsley Amis
+Kiran Desai
+Knut Hamsun
+Larry McMurtry
+László Krasznahorkai
+Louis Bromfield
+Louise Erdrich
+Louise Glück
+Luigi Pirandello
+Lydia Davis
+MacKinlay Kantor
+Margaret Atwood
+Margaret Ayer Barnes
+Margaret Mitchell
+Margaret Wilson
+Marieke Lucas Rijneveld
+Marilynne Robinson
+Mario Vargas Llosa
+Marjorie Kinnan Rawlings
+Marlon James
+Martin Flavin
+Maurice Maeterlinck
+Michael Chabon
+Michael Cunningham
+Michael Ondaatje
+Michael Shaara
+Miguel Angel Asturias
+Mikhail Sholokhov
+Mo Yan
+N. Scott Momaday
+Nadine Gordimer
+Naguib Mahfouz
+Nelly Sachs
+Norman Mailer
+Octavio Paz
+Odysseus Elytis
+Olga Tokarczuk
+Oliver Lafarge
+Orhan Pamuk
+Oscar Hijuelos
+P. H. Newby
+Pablo Neruda
+Pär F. Lagerkvist
+Parl S. Buck
+Pat Barker
+Patrick Modiano
+Patrick White
+Paul Beatty
+Paul Harding
+Paul J. L. Heyse
+Paul Scott
+Pearl S. Buck
+Penelope Fitzgerald
+Penelope Lively
+Peter Carey
+Peter Handke
+Peter Taylor
+Philip Roth
+Quentin Bell
+Quince Duncan
+Qassim Haddad
+Rabindranath Tagore
+Rene F. A. Sully Prudhomme
+Richard Flanagan
+Richard Ford
+Richard Powers
+Richard Russo
+Robert Lewis Taylor
+Robert Olen Butler
+Robert Penn Warren
+Roddy Doyle
+Roger Martin du Gard
+Romain Rolland
+Rudolf C. Eucken
+Rudyard Kipling
+Ruth Prawer Jhabvala
+Saint-John Perse
+Salman Rushdie
+Salvatore Quasimodo
+Samuel Beckett
+Samuel Joseph Agnon
+Saul Bellow
+Seamus Heaney
+Selma Lagerlöf
+Shehan Karunatilaka
+Shirley Ann Grau
+Sigrid Undset
+Sinclair Lewis
+Stanley Middleton
+Steven Millhauser
+Svetlana Alexievich
+T. S. Eliot
+T. S. Stribling
+Theodore Mommsen
+Thomas Keneally
+Thomas Mann
+Thornton Wilder
+Tomas Tranströmer
+Toni Morrison
+Upton Sinclair
+V. S. Naipaul
+Verner von Heidenstam
+Vicente Aleixandre
+Viet Thanh Nguyen
+Wallace Stegner
+Willa Cather
+William Butler Yeats
+William Faulkner
+William Golding
+William Kennedy
+William Styron
+Winston Churchill
+Wislawa Szymborska
+Wladyslaw S. Reymont
+Wole Soyinka
+Yann Martel
+Yasunari Kawabata
+Zadie Smith
