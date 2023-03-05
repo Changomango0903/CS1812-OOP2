@@ -7,44 +7,30 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 public class ReadingListItemStore{
-  Map<String, List<String>> map;
-  public ReadingListItemStore(){
-    map = new HashMap<String, List<String>>();
-  }
-  public ReadingListItemStore(String fileName, int num){
+  private Map<String, List<String>> map;
+  public ReadingListItemStore(){ map = new HashMap<String, List<String>>();}
+  public ReadingListItemStore(String fileName, int prefixLength){
     map = new HashMap<String, List<String>>();
     try(BufferedReader br = new BufferedReader(new FileReader(fileName))){
       String line = br.readLine();
       while(line != null){
-        for(int i = 1; i <= num; i++){
-          line = line.toLowerCase();
-          line = line.substring(0, i).toUpperCase() + line.substring(1);
+        for(int i = 1; i <= prefixLength; i++){
+          line = line.substring(0, i).toUpperCase() + line.substring(i);
           this.put(line.substring(0, i).toLowerCase(), line);
         }
         line = br.readLine();
-
-        // line = line.toLowerCase();
-        // line = line.substring(0, 1).toUpperCase() + line.substring(1);
-        // // System.out.println(line);
-        // // System.out.println(line.substring(0, 1));
-        // this.put(line.substring(0, 1).toLowerCase(), line);
-        // line = br.readLine();
       }
     } catch (IOException e){
       e.printStackTrace();
       System.out.println("Error : File cannot be found");
     }
   }
-
   public ReadingListItemStore(String fileName){
     map = new HashMap<String, List<String>>();
     try(BufferedReader br = new BufferedReader(new FileReader(fileName))){
       String line = br.readLine();
       while(line != null){
-        line = line.toLowerCase();
         line = line.substring(0, 1).toUpperCase() + line.substring(1);
-        // System.out.println(line);
-        // System.out.println(line.substring(0, 1));
         this.put(line.substring(0, 1).toLowerCase(), line);
         line = br.readLine();
       }
@@ -61,13 +47,11 @@ public class ReadingListItemStore{
   public void put(String key, String item){
     if(containsKey(key)){
       List<String> list = map.get(key.toLowerCase());
-      String formatItem = item.substring(0,1).toUpperCase() + item.substring(1);
-      list.add(formatItem);
+      list.add(item.substring(0, 1).toUpperCase() + item.substring(1));
       map.put(key, list);
     } else {
       List<String> list = new ArrayList<String>();
-      String formatItem = item.substring(0,1).toUpperCase() + item.substring(1);
-      list.add(formatItem);
+      list.add(item.substring(0, 1).toUpperCase() + item.substring(1));
       map.put(key, list);
     }
   }
@@ -81,5 +65,4 @@ public class ReadingListItemStore{
       return null;
     }
   }
-
 }
