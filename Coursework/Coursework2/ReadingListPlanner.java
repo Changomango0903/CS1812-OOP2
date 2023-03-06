@@ -19,29 +19,37 @@ public class ReadingListPlanner{
   public List<String> generate(String input){ return generate(input, 1);}
 
   //Method if length specified
+  //Searches and shrinks prefix until a match is found
   public List<String> generate(String input, int num){
     input = input.toLowerCase();
     int gap = num;
     int length = input.length();
-    int pos = 0;
-    List<String> result = new ArrayList<String>();
-    if(length >= 1){
-      result.add(RLIS.getRandomItem(input.substring(pos, pos+gap)));
-      pos+=gap;
-    }
-    if(length >= 2){
-      result.add(PWS.getRandomItem(input.substring(pos, pos+gap)));
-      pos+=gap;
-    }
-    if(length >= 3){
-      result.add(BS.getRandomItem(input.substring(pos, pos+gap)));
-      pos+=gap;
-    }
-    for(int i = pos; i<length;i+=gap){
-      if(i/gap<(length-pos)/2){
-        result.add(BS.getRandomItem(input.substring(i, i+gap)));
-      } else {
-        result.add(PWS.getRandomItem(input.substring(i,i+gap)));
+    List<String> result = new ArrayList<String>(); 
+    int j = num;
+    for(int i = 0; i<length; i=j){
+      for(j = i + num; j > i && j <= input.length() + 1; j--){
+        if(i % 3 == 1){
+          if(PWS.containsKey(input.substring(i, j))){
+            result.add(PWS.getRandomItem(input.substring(i, j)));
+            break;
+          } else {
+            continue;
+          }
+        } else if(i % 3 == 2){
+          if(BS.containsKey(input.substring(i, j))){
+            result.add(BS.getRandomItem(input.substring(i, j)));
+            break;
+          } else {
+            continue;
+          }
+        } else{
+          if(RLIS.containsKey(input.substring(i, j))){
+            result.add(RLIS.getRandomItem(input.substring(i, j)));
+            break;
+          } else {
+            continue;
+          }
+        }
       }
     }
     return result;

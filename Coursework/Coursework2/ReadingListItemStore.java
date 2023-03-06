@@ -7,8 +7,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 public class ReadingListItemStore{
-  private Map<String, List<String>> map;
+  private Map<String, List<String>> map; //Hashmap for holding keys & objects
+
+  //Constructor Graveyard
+  //Initialize basic map
   public ReadingListItemStore(){ map = new HashMap<String, List<String>>();}
+  //Maps keys based on prefix length
   public ReadingListItemStore(String fileName, int prefixLength){
     map = new HashMap<String, List<String>>();
     try(BufferedReader br = new BufferedReader(new FileReader(fileName))){
@@ -25,6 +29,7 @@ public class ReadingListItemStore{
       System.out.println("Error : File cannot be found");
     }
   }
+  //Maps keys based on first letter
   public ReadingListItemStore(String fileName){
     map = new HashMap<String, List<String>>();
     try(BufferedReader br = new BufferedReader(new FileReader(fileName))){
@@ -40,10 +45,13 @@ public class ReadingListItemStore{
     }
   }
 
+  //Returns whether key exists in map
   public boolean containsKey(String key){
     return map.containsKey(key.toLowerCase());
   }
 
+  //Creates list object and adds string item into key location
+  //if list objects already exists, inserts item to end of list
   public void put(String key, String item){
     if(containsKey(key)){
       List<String> list = map.get(key.toLowerCase());
@@ -55,7 +63,7 @@ public class ReadingListItemStore{
       map.put(key, list);
     }
   }
-
+  //Gets random item from key location
   public String getRandomItem(String key){
     if(containsKey(key)){
       Random randNum = new Random();

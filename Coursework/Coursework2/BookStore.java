@@ -1,16 +1,15 @@
 public class BookStore extends ReadingListItemStore{
+  //Constructor Graveyard
   public BookStore(){ super();}
   public BookStore(String fileName, int num){ super(fileName, num);}
 
-  public boolean containsKey(String key){
-    return super.containsKey(key);
-  }
-
-  public void put(String key, String item){
-    super.put(key, item);
-  }
+  //Inherited from ReadingListItemStore
+  public boolean containsKey(String key){ return super.containsKey(key);}
+  public void put(String key, String item){ super.put(key, item);}
 
   @Override
+  //Get random item from key location
+  //Categorize book through last four characters
   public String getRandomItem(String key){
     if(super.containsKey(key)){
       String title = super.getRandomItem(key);
