@@ -1,7 +1,10 @@
+import java.io.BufferedReader;
+import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.Reader;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
@@ -23,13 +26,15 @@ public class HollomonClient{
   public List<Card> login(String username, String password){
     try(InputStream is = socket.getInputStream()){
       try(OutputStream os = socket.getOutputStream()){
+        DataInputStream dis = new DataInputStream(is);
         DataOutputStream dos = new DataOutputStream(os);
         String fUsername = username + "\n";
         String fPassword = password + "\n";
-        os.write(fUsername.getBytes());
-        os.flush();
-        os.write(fPassword.getBytes());
-        os.flush();
+        dos.writeBytes(fUsername);
+        dos.writeBytes(fPassword);
+        dos.flush();
+        System.out.println(dis.readUTF());
+
         return new ArrayList<Card>();
       } catch(IOException e){
         e.printStackTrace();
