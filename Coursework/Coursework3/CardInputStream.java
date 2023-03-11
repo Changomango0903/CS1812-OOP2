@@ -9,6 +9,42 @@ public class CardInputStream extends InputStream{
     public CardInputStream(Reader input){
         this.input = new BufferedReader(input);
     }
+
+    public Card readCard(){
+        try{
+            String fLine = input.readLine();
+            Long ID = Long.parseLong(input.readLine());
+            String name = input.readLine();
+            String rankStr = input.readLine();
+
+            Rank rank;
+            switch(rankStr){
+                case("COMMON"):
+                    rank = Rank.COMMON;
+                    break;
+                case("UNCOMMON"):
+                    rank = Rank.UNCOMMON;
+                    break;
+                case("RARE"):
+                    rank = Rank.RARE;
+                    break;
+                case("UNIQUE"):
+                    rank = Rank.UNIQUE;
+                    break;
+                default:
+                    rank = null;
+                    break;
+            }
+            return new Card(ID, name, rank);
+
+        }catch(IOException e){
+            e.printStackTrace();
+            System.out.println("Outta bounds brotha");
+            return null;
+        }
+        
+    }
+
     @Override
     public int read() throws IOException {
         // TODO Auto-generated method stub
