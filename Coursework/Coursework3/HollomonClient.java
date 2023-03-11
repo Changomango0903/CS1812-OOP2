@@ -34,8 +34,11 @@ public class HollomonClient{
         os.flush();
         String response = new String(is.readAllBytes(), StandardCharsets.UTF_8);
         System.out.println(response);
-
-        return new ArrayList<Card>();
+        if(response.equalsIgnoreCase("Incorrect password.")){
+          return null;
+        } else {
+          return new ArrayList<Card>();
+        }
       } catch(IOException e){
         e.printStackTrace();
         System.out.println("Output Stream could not be established");
