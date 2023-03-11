@@ -2,12 +2,13 @@ import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.Reader;
 
 public class CardInputStream extends InputStream{
     BufferedReader input;
-    public CardInputStream(Reader input){
-        this.input = new BufferedReader(input);
+    public CardInputStream(InputStream input){
+        this.input = new BufferedReader(new InputStreamReader(input));
     }
 
     public Card readCard(){
