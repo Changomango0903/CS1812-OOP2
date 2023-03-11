@@ -35,10 +35,10 @@ public class HollomonClient{
         os.flush();
         String response = br.readLine();
         System.out.println(response);
-        if(response.equalsIgnoreCase("Incorrect password.")){
-          return null;
-        } else {
+        if(response.substring(response.length()-13).equals("successfully.")){
           return new ArrayList<Card>();
+        } else {
+          return null;
         }
       } catch(IOException e){
         e.printStackTrace();
