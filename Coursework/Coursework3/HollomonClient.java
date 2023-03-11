@@ -7,6 +7,7 @@ import java.io.OutputStream;
 import java.io.Reader;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 public class HollomonClient{
@@ -26,14 +27,13 @@ public class HollomonClient{
   public List<Card> login(String username, String password){
     try(InputStream is = socket.getInputStream()){
       try(OutputStream os = socket.getOutputStream()){
-        DataInputStream dis = new DataInputStream(is);
-        DataOutputStream dos = new DataOutputStream(os);
         String fUsername = username + "\n";
         String fPassword = password + "\n";
-        dos.writeBytes(fUsername);
-        dos.writeBytes(fPassword);
-        dos.flush();
-        System.out.println(dis.readUTF());
+        os.write(fUsername.getBytes());
+        os.write(fPassword.getBytes());
+        os.flush();
+        String response = new String(is.readAllBytes(), StandardCharsets.UTF_8);
+        System.out.println(response);
 
         return new ArrayList<Card>();
       } catch(IOException e){
