@@ -52,7 +52,7 @@ public class HollomonClient{
         }
   }
   public long getCredits() throws IOException{
-    String requestCredits = "CREDITS";
+    String requestCredits = "CREDITS\n";
     os.write(requestCredits.getBytes());
     os.flush();
     String strCredits = br.readLine();
