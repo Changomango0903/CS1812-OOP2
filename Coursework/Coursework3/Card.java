@@ -18,11 +18,13 @@ public class Card implements Comparable<Card>{
   public String toString(){return "ID: " + this.id + "\nNAME: " + this.name + "\nRANK: " + this.rank + "\nPrice: " + this.price;}
 
   public int hashCode(){return java.util.Objects.hashCode(id);}
-  public boolean equals(Card card){
-    if(card == null){
+  public boolean equals(Object obj){
+    if(obj == null || obj.getClass() != this.getClass()){
       return false;
+    } else {
+      Card card = (Card) obj;
+      return this.getName().equals(card.getName()) && this.getRank().equals(card.getRank()) && Long.compare(this.getID(), card.getID()) == 0;
     }
-    return this.name.equals(card.getName()) && this.rank.equals(card.getRank()) && Long.compare(this.id, card.getID()) == 0;
   }
 
   public int compareTo(Card card){
