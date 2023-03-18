@@ -40,7 +40,14 @@ public class HollomonClient{
         String response = br.readLine();
         System.out.println(response);
         if(response.equals(String.format("User %s logged in successfully.", username))){
-          return new ArrayList<Card>();
+          List<Card> cardList = new ArrayList<Card>();
+          CardInputStream cis = new CardInputStream(this.is);
+          Card currCard = cis.readCard();
+          while(currCard != null){
+            cardList.add(currCard);
+            currCard = cis.readCard();
+          }
+          return cardList;
         } else {
           return null;
         }
