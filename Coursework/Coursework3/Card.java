@@ -28,18 +28,18 @@ public class Card implements Comparable<Card>{
     if(this.getClass() != card.getClass()){
       return false;
     }
-    return this.toString().equals(card.toString());
+    return this.toString().equals(card.toString()) && this.hashCode() == card.hashCode();
   }
 
   public int compareTo(Card card){
     if(this.equals(card)){
       return 0;
-    } else if(this.getRank().rankInt() < card.getRank().rankInt()){
-      return -1;
-    } else if(this.getName().compareTo(card.getName())<0){
-      return -1;
-    } else if(this.getID() < card.getID()){
-      return -1;
+    } else if(this.getRank() != card.getRank()){
+      return this.getRank().compareTo(card.getRank());
+    } else if(this.getName().compareTo(card.getName()) != 0){
+      return this.getName().compareTo(card.getName());
+    } else if(this.getID() != card.getID()){
+      return Long.compare(this.getID(), card.getID());
     }
     return 1;
   }

@@ -13,10 +13,11 @@ public class CardInputStream extends InputStream{
 
     public Card readCard(){
         try{
-            String fLine = input.readLine();
+            String logicLine = input.readLine();
             Long ID = Long.parseLong(input.readLine());
             String name = input.readLine();
             String rankStr = input.readLine();
+            String price = input.readLine();
 
             Rank rank;
             switch(rankStr){
@@ -37,14 +38,14 @@ public class CardInputStream extends InputStream{
                     break;
             }
             return new Card(ID, name, rank);
-
         }catch(IOException e){
             e.printStackTrace();
             System.out.println("Outta bounds brotha");
             return null;
         }
-        
     }
+
+
 
     @Override
     public int read() throws IOException {
