@@ -15,10 +15,7 @@ public class Card implements Comparable<Card>{
   public String getName(){return this.name;}
   public Rank getRank(){return this.rank;}
   public int getPrice(){return this.price;}
-
-  public String toString(){
-    return "ID: " + this.id + "\nNAME: " + this.name + "\nRANK: " + this.rank + "\nPrice: " + this.price;
-  }
+  public String toString(){return "ID: " + this.id + "\nNAME: " + this.name + "\nRANK: " + this.rank + "\nPrice: " + this.price;}
 
   public int hashCode(){return java.util.Objects.hashCode(id);}
   public boolean equals(Card card){

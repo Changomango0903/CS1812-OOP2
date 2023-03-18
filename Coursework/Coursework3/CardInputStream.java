@@ -37,10 +37,6 @@ public class CardInputStream extends InputStream{
                 break;
         }
         return new Card(ID, name, rank);
-        }catch(IOException e){
-            e.printStackTrace();
-            System.out.println("Outta bounds brotha");
-            return null;
     }
 
     public String readResponse() throws IOException{
