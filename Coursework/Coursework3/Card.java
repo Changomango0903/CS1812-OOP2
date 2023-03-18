@@ -33,10 +33,10 @@ public class Card implements Comparable<Card>{
       return 0;
     } else if(this.getRank() != card.getRank()){
       return this.getRank().compareTo(card.getRank());
-    } else if(this.getName().compareTo(card.getName()) != 0){
-      return this.getName().compareTo(card.getName());
     } else if(this.getID() != card.getID()){
       return Long.compare(this.getID(), card.getID());
+    } else if(this.getName().compareTo(card.getName()) != 0){
+      return this.getName().compareTo(card.getName());
     }
     return 1;
   }

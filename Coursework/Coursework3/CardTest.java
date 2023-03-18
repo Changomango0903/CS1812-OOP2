@@ -9,7 +9,7 @@ public class CardTest{
     Card c5 = new Card(32178937, "c3", Rank.UNIQUE);
     Card[] testDeck = {c2, c3, c4, c5};
     for(int i = 0; i < 4; i++){
-      System.out.println("c1 vs " + "c" + i);
+      System.out.println("c1 vs " + "c" + (i + 2));
       System.out.println(c1.equals(testDeck[i]));
       System.out.println(c1.compareTo(testDeck[i]));
     }
