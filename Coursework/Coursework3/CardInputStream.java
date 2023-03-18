@@ -11,13 +11,12 @@ public class CardInputStream extends InputStream{
         this.input = new BufferedReader(new InputStreamReader(input));
     }
 
-    public Card readCard(){
-        try{
-            String logicLine = input.readLine();
-            Long ID = Long.parseLong(input.readLine());
-            String name = input.readLine();
-            String rankStr = input.readLine();
-            String price = input.readLine();
+    public Card readCard() throws IOException{
+        String logicLine = input.readLine();
+        Long ID = Long.parseLong(input.readLine());
+        String name = input.readLine();
+        String rankStr = input.readLine();
+        String price = input.readLine();
 
             Rank rank;
             switch(rankStr){
