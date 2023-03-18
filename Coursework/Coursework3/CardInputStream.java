@@ -18,30 +18,33 @@ public class CardInputStream extends InputStream{
         String rankStr = input.readLine();
         String price = input.readLine();
 
-            Rank rank;
-            switch(rankStr){
-                case("COMMON"):
-                    rank = Rank.COMMON;
-                    break;
-                case("UNCOMMON"):
-                    rank = Rank.UNCOMMON;
-                    break;
-                case("RARE"):
-                    rank = Rank.RARE;
-                    break;
-                case("UNIQUE"):
-                    rank = Rank.UNIQUE;
-                    break;
-                default:
-                    rank = null;
-                    break;
-            }
-            return new Card(ID, name, rank);
+        Rank rank;
+        switch(rankStr){
+            case("COMMON"):
+                rank = Rank.COMMON;
+                break;
+            case("UNCOMMON"):
+                rank = Rank.UNCOMMON;
+                break;
+            case("RARE"):
+                rank = Rank.RARE;
+                break;
+            case("UNIQUE"):
+                rank = Rank.UNIQUE;
+                break;
+            default:
+                rank = null;
+                break;
+        }
+        return new Card(ID, name, rank);
         }catch(IOException e){
             e.printStackTrace();
             System.out.println("Outta bounds brotha");
             return null;
-        }
+    }
+
+    public String readResponse() throws IOException{
+        return input.readLine();
     }
 
 
