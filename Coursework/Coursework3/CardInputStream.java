@@ -13,30 +13,35 @@ public class CardInputStream extends InputStream{
 
     public Card readCard() throws IOException{
         String logicLine = input.readLine();
-        Long ID = Long.parseLong(input.readLine());
-        String name = input.readLine();
-        String rankStr = input.readLine();
-        String price = input.readLine();
+        if(logicLine.equals("CARD")){
+            Long ID = Long.parseLong(input.readLine());
+            String name = input.readLine();
+            String rankStr = input.readLine();
+            String price = input.readLine();
 
-        Rank rank;
-        switch(rankStr){
-            case("COMMON"):
-                rank = Rank.COMMON;
-                break;
-            case("UNCOMMON"):
-                rank = Rank.UNCOMMON;
-                break;
-            case("RARE"):
-                rank = Rank.RARE;
-                break;
-            case("UNIQUE"):
-                rank = Rank.UNIQUE;
-                break;
-            default:
-                rank = null;
-                break;
+            Rank rank;
+            switch(rankStr){
+                case("COMMON"):
+                    rank = Rank.COMMON;
+                    break;
+                case("UNCOMMON"):
+                    rank = Rank.UNCOMMON;
+                    break;
+                case("RARE"):
+                    rank = Rank.RARE;
+                    break;
+                case("UNIQUE"):
+                    rank = Rank.UNIQUE;
+                    break;
+                default:
+                    rank = null;
+                    break;
+            }
+            return new Card(ID, name, rank);
+        } else {
+            return null;
         }
-        return new Card(ID, name, rank);
+        
     }
 
     public String readResponse() throws IOException{
