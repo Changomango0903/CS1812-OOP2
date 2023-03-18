@@ -67,13 +67,13 @@ public class HollomonClient{
     os.write(requestCards.getBytes());
     os.flush();
     List<Card> cardList = new ArrayList<Card>();
-    CardInputStream cis = new CardInputStream(this.is);
     Card currCard = cis.readCard();
     while(currCard != null){
       cardList.add(currCard);
+      currCard = cis.readCard();
     }
     Collections.sort(cardList);
-    return cardList;
+    return cardList; 
   }
 
   public void close(){
