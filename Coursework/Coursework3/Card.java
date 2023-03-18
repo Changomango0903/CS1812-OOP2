@@ -25,7 +25,7 @@ public class Card implements Comparable<Card>{
     if(this.getClass() != card.getClass()){
       return false;
     }
-    return this.toString().equals(card.toString()) && this.hashCode() == card.hashCode();
+    return this.toString().equals(card.toString());
   }
 
   public int compareTo(Card card){
