@@ -15,8 +15,8 @@ public class Card implements Comparable<Card>{
   public String getName(){return this.name;}
   public Rank getRank(){return this.rank;}
   public int getPrice(){return this.price;}
-  public String toString(){return "ID: " + this.id + "\nNAME: " + this.name + "\nRANK: " + this.rank + "\nPrice: " + this.price;}
 
+  public String toString(){return "ID: " + this.id + "\nNAME: " + this.name + "\nRANK: " + this.rank + "\nPrice: " + this.price;}
   public int hashCode(){return java.util.Objects.hashCode(id);}
   public boolean equals(Object obj){
     if(obj == null || obj.getClass() != this.getClass()){
@@ -26,7 +26,6 @@ public class Card implements Comparable<Card>{
       return this.getName().equals(card.getName()) && this.getRank().equals(card.getRank()) && Long.compare(this.getID(), card.getID()) == 0;
     }
   }
-
   public int compareTo(Card card){
     if(this.equals(card)){
       return 0;

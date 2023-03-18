@@ -12,6 +12,7 @@ public class HollomonClient{
   int port;
   Socket socket;
   InputStream is;
+  BufferedReader br;
   OutputStream os;
   public HollomonClient(String server, int port){
     this.server = server;
@@ -19,15 +20,15 @@ public class HollomonClient{
     try{
       this.socket = new Socket(server, port);
       is = socket.getInputStream();
+      br = new BufferedReader(new InputStreamReader(is));
       os = socket.getOutputStream();
+      
     } catch(Exception e){
       e.printStackTrace();
       System.out.println("Error: Cannot connect to host");
     }
   }
-  public List<Card> login(String username, String password){
-    try(BufferedReader br = new BufferedReader(new InputStreamReader(this.is))){
-      try(OutputStream os = this.os){
+  public List<Card> login(String username, String password) throws IOException{
         String fUsername = username + "\n";
         String fPassword = password + "\n";
         os.write(fUsername.getBytes());
@@ -49,16 +50,15 @@ public class HollomonClient{
         } else {
           return null;
         }
-      } catch(IOException e){
-        e.printStackTrace();
-        System.out.println("Output Stream could not be established");
-        return null;
-      }
-    } catch(IOException e){
-      e.printStackTrace();
-      System.out.println("Input Stream could not be established");
-      return null;
-    }
+  }
+  public long getCredits() throws IOException{
+    String requestCredits = "CREDITS";
+    os.write(requestCredits.getBytes());
+    os.flush();
+    String strCredits = br.readLine();
+    String response = br.readLine();
+    long longCredits = Long.parseLong(strCredits);
+    return longCredits;
   }
 
   public void close(){
