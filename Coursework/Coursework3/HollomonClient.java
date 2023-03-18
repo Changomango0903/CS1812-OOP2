@@ -43,7 +43,7 @@ public class HollomonClient{
             cardList.add(currCard);
             currCard = cis.readCard();
           }
-          //Collections.sort(cardList);
+          Collections.sort(cardList);
           return cardList;
 
         } else {
