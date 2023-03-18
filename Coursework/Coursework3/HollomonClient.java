@@ -14,6 +14,7 @@ public class HollomonClient{
   InputStream is;
   BufferedReader br;
   OutputStream os;
+  CardInputStream cis;
   public HollomonClient(String server, int port){
     this.server = server;
     this.port = port;
@@ -22,6 +23,7 @@ public class HollomonClient{
       is = socket.getInputStream();
       br = new BufferedReader(new InputStreamReader(is));
       os = socket.getOutputStream();
+      cis = new CardInputStream(this.is);
       
     } catch(Exception e){
       e.printStackTrace();
@@ -38,7 +40,6 @@ public class HollomonClient{
         System.out.println(response);
         if(response.equals(String.format("User %s logged in successfully.", username))){
           List<Card> cardList = new ArrayList<Card>();
-          CardInputStream cis = new CardInputStream(this.is);
           Card currCard = cis.readCard();
           while(currCard != null){
             cardList.add(currCard);
@@ -59,6 +60,20 @@ public class HollomonClient{
     String response = br.readLine();
     long longCredits = Long.parseLong(strCredits);
     return longCredits;
+  }
+
+  public List<Card> getCards() throws IOException{
+    String requestCards = "CARDS\n";
+    os.write(requestCards.getBytes());
+    os.flush();
+    List<Card> cardList = new ArrayList<Card>();
+    CardInputStream cis = new CardInputStream(this.is);
+    Card currCard = cis.readCard();
+    while(currCard != null){
+      cardList.add(currCard);
+    }
+    Collections.sort(cardList);
+    return cardList;
   }
 
   public void close(){
