@@ -22,9 +22,6 @@ public class Card implements Comparable<Card>{
     if(card == null){
       return false;
     }
-    if(this.getClass() != card.getClass()){
-      return false;
-    }
     return this.name.equals(card.getName()) && this.rank.equals(card.getRank()) && Long.compare(this.id, card.getID()) == 0;
   }
 
