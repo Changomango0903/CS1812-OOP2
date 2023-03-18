@@ -15,19 +15,23 @@ public class HollomonClient{
   String server;
   int port;
   Socket socket;
+  InputStream is;
+  OutputStream os;
   public HollomonClient(String server, int port){
     this.server = server;
     this.port = port;
     try{
       this.socket = new Socket(server, port);
+      is = socket.getInputStream();
+      os = socket.getOutputStream();
     } catch(Exception e){
       e.printStackTrace();
       System.out.println("Error: Cannot connect to host");
     }
   }
   public List<Card> login(String username, String password){
-    try(BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()))){
-      try(OutputStream os = socket.getOutputStream()){
+    try(BufferedReader br = new BufferedReader(new InputStreamReader(this.is))){
+      try(OutputStream os = this.os){
         String fUsername = username + "\n";
         String fPassword = password + "\n";
         os.write(fUsername.getBytes());
@@ -35,7 +39,7 @@ public class HollomonClient{
         os.flush();
         String response = br.readLine();
         System.out.println(response);
-        if(response.substring(response.length()-13).equals("successfully.")){
+        if(response.equals(String.format("User %s logged in successfully.", username))){
           return new ArrayList<Card>();
         } else {
           return null;
@@ -54,7 +58,9 @@ public class HollomonClient{
 
   public void close(){
     try{
-      socket.close();
+      this.is.close();
+      this.os.close();
+      this.socket.close();
     }catch(IOException e){
       System.out.println("No connection has been established");
     }
