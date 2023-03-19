@@ -75,7 +75,39 @@ public class HollomonClient{
     Collections.sort(cardList);
     return cardList; 
   }
-
+  public List<Card> getOffers() throws IOException{
+    String requestOffers = "OFFERS\n";
+    os.write(requestOffers.getBytes());
+    os.flush();
+    List<Card> cardList = new ArrayList<Card>();
+    Card currCard = cis.readCard();
+    while(currCard != null){
+      cardList.add(currCard);
+      currCard = cis.readCard();
+    }
+    Collections.sort(cardList);
+    return cardList;
+  }
+  public boolean buyCard(Card card) throws IOException{
+    String requestBuy = "BUY " + card.getID() + "\n";
+    os.write(requestBuy.getBytes());
+    os.flush();
+    String response = br.readLine();
+    if(response.equals("OK")){
+      return true;
+    }
+    return false;
+  }
+  public boolean sellCard(Card card, long price) throws IOException{
+    String requestSell = "SELL " + card.getID() + " " + price + "\n";
+    os.write(requestSell.getBytes());
+    os.flush();
+    String response = br.readLine();
+    if(response.equals("OK")){
+      return true;
+    }
+    return false;
+  }
   public void close(){
     try{
       this.is.close();
