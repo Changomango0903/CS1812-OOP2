@@ -4,20 +4,23 @@ public class Card implements Comparable<Card>{
   private Rank rank;
   private int price;
 
-  public Card(long id, String name, Rank rank){
+  public Card(long id, String name, Rank rank){ //Constructor
     this.id = id;
     this.name = name;
     this.rank = rank;
     this.price = 0;
   }
 
+  //Getter methods
   public long getID(){return this.id;}
   public String getName(){return this.name;}
   public Rank getRank(){return this.rank;}
   public int getPrice(){return this.price;}
-
   public String toString(){return "ID: " + this.id + "\nNAME: " + this.name + "\nRANK: " + this.rank + "\nPrice: " + this.price;}
+
+  //Turn ID -> Hashcode
   public int hashCode(){return java.util.Objects.hashCode(id);}
+  
   public boolean equals(Object obj){
     if(obj == null || obj.getClass() != this.getClass()){
       return false;
@@ -26,6 +29,7 @@ public class Card implements Comparable<Card>{
       return this.getName().equals(card.getName()) && this.getRank().equals(card.getRank()) && Long.compare(this.getID(), card.getID()) == 0;
     }
   }
+
   public int compareTo(Card card){
     if(this.equals(card)){
       return 0;
@@ -36,6 +40,6 @@ public class Card implements Comparable<Card>{
     } else if(this.getID() != card.getID()){
       return Long.compare(this.getID(), card.getID());
     }
-    return 1;
+    return 0;
   }
 }

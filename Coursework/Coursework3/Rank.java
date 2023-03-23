@@ -1,6 +1,6 @@
 public enum Rank{
   UNIQUE, RARE, UNCOMMON, COMMON;
-  public int rankInt(){
+  public int rankInt(){ //Giving value to each enum value
     switch(this) {
     case UNIQUE:
       return 3;
